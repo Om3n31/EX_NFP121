@@ -1,0 +1,5 @@
+<!ELEMENT cli (argument+)>
+        <!ELEMENT argument (#PCDATA)>
+        <!ATTLIST argument
+                acces CDATA #REQUIRED
+                nb CDATA #IMPLIED>
