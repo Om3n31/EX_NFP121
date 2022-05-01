@@ -1,0 +1,53 @@
+1 -
+    1.1 @Override est un décorateur que l'on écrit au dessus d'une méthode
+        qui redéfinit une méthode existante dans une classe parente.
+        Ici, elle apparaît car .toString() est une méthode de la classe Objet,
+        on peux utiliser le décorateur @Override car nous réutilisons la même signature
+        pour la méthode toString(), il s'agit d'une redéfinition.
+        Cependant l'utilisation du décorateur n'est pas obligatoire, il existe pour faciliter la lecture
+        du code et pour que le compilateur vérifie si la méthode avec le décorateur est bien en train de redéfinir
+        la méthode définie dans une classe parente.
+
+    1.2 Il est en général préférable de donner des droits d'accès privés aux attributs d'une classe et de
+        définir des méthodes getter & setter pour ces derniers.
+        Cela permet de contrôler la récupération et le changement de valeur de ces attributs en imposant des conditions
+        dans les méthodes get & set.
+
+    1.3 On doit utiliser la méthode o1.equals(o2) pour vérifier l'égalité logique entre deux objets, donc l'égalité
+        des états, du contenu des objets.
+        Il est donc possible d'utiliser .equals() et le résultat est le bon si les deux objets sont initialisés avec
+        les mêmes valeurs.
+2 -
+    2.1 -> Voir fichier CLITest
+
+    2.2 alpha=0.85, epsilon=001, indice=100, mode=CREUSE
+
+    2.3 On peut en déduire que le programme n'est pas robuste, c'est à dire que toutes les exceptions
+        ne sont pas vérifiées et donc qu'il peut cesser de fonctionner.
+        L'exception est survenue lorsque l'utilisateur a essayé d'entrer une valeur de type Double pour
+        argument dont le type attendu était un Integer, la méthode parseInt() a renvoyé une exception.
+
+    2.4 On sait que l'exception n'est pas vérifiée car les méthodes de parsing qui sont susceptibles
+        de propager une exception ne sont pas enveloppées d'un try/catch.
+
+    2.5 -> Voir fichier CLIClassique
+    2.6
+
+3 -
+    3.1
+    3.2
+    3.3 On utilise une HashMap, qui contient l'accès de l'optionAbstract et l'objet de l'optionAbstract lui même, HashMap permet d'associer
+        une clé à une valeur, parfait pour notre cas d'utilisation.
+
+4 -
+    4.1 On crée une JFrame qui va contenir plusieurs JPanel, un premier JPanel avec un layout en BorderLayout,
+        Dans la BorderLayout on veux les JButtons Creuse et Pleine en NORTH,
+        les JLabel, JTextField et JButton en CENTER, qui seront eux même dans une série de JPanels
+        et l'affichage contenant les valeurs, JTextField en SOUTH.
+
+    4.2 Pour ce faire, il faut faire un setText() sur le JTextField avec la valeur actuelle de ce même JTextField (getText() + "-C")
+    4.3
+
+5 -
+
+
