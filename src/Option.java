@@ -4,24 +4,12 @@ public class Option implements OptionInterface {
     private Action action;
 
     private Boolean takesValues;
-
-    /*
-    private String value;
-
-    public Configuration configuration;
-    */
-    Option(String accès, String description){
-        this.takesValues = false;
-        setAccès(accès);
-        setDescription(description);
-    }
     Option(String accès, String description, Action action){
         this.takesValues = false;
         setAccès(accès);
         setDescription(description);
         this.action = action;
     }
-
 
     public String getAccès() {
         return accès;
@@ -35,15 +23,12 @@ public class Option implements OptionInterface {
     public void setDescription(String description) {
         this.description = description;
     }
-    /*
-    public String getValue() {
-        return value;
-    }
-    public void setValue(String value) {
-        this.value = value;
-    }*/
     public Boolean takesValue() {
         return takesValues;
+    }
+
+    public void setAction(Action action){
+        this.action = action;
     }
 
     @Override
@@ -52,7 +37,7 @@ public class Option implements OptionInterface {
 
     @Override
     public void executer(Configuration config) {
-
+        action.execute(config);
     }
 
     @Override

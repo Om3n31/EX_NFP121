@@ -2,9 +2,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CLIModulaire {
-    ArrayList<Option> optionsBis = new ArrayList<>();
+    //J'utilise le hashmap pour faciliter l'accès à l'option
     HashMap<String, Option> options = new HashMap<>();
-    HashMap<Option, Action> actions = new HashMap<>();
     Configuration config;
 
     CLIModulaire(){
@@ -32,30 +31,23 @@ public class CLIModulaire {
                 return null;
             }
             if(!currentOption.takesValue()){
-                actions.get(currentOption).execute(config);
+                currentOption.executer(config);
             }
             else if(currentOption.takesValue()){
-                try{
-                    actions.get(currentOption).execute(config, args[i]);
-                    //currentOption.executer(config, args[i]);
-                }catch (Exception e){
-                    System.out.println(e);
-                }
-
+                currentOption.executer(config, args[i]);
             }
         }
         return new Configuration();
     }
-    public void addOption(String accès, Option option){
+    public void addOption(String accès, String description, Action action){
+        Option option = new Option(accès, description, action);
         options.put(accès, option);
     }
-    public void associateAction(Option option, Action action){
-        actions.put(option, action);
-    }
+
     private boolean isOption(String arg){
         return arg.charAt(0) == '-';
     }
     private boolean optionIsValid(String arg){
-        return arg.length() == 2 && options.containsKey(arg.charAt(1));
+        return options.containsKey(arg);
     }
 }

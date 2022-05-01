@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class IHMcli {
+    //EXERCICE 4
     JFrame mainFrame;
     JPanel topPanel, centerPanel, bottomPanel;
     JButton creuseButton, pleineButton, plusButtonIndice, plusButtonAlpha, plusButtonEpsilon;

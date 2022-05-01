@@ -46,10 +46,15 @@
         et l'affichage contenant les valeurs, JTextField en SOUTH.
 
     4.2 Pour ce faire, il faut faire un setText() sur le JTextField avec la valeur actuelle de ce même JTextField (getText() + "-C")
-    4.3
+    4.3 -> Voir fichier IHMcli
 
 5 -
     5.1 -> Voir fichier CLIUtils
-    5.2 -> Il existe sur la classe CLIModulaire une méthode qui permet d'associer une action à une option, il suffit de trouver l'option voulue.
+    5.2 On peux ajouter une action à une option en consultant la liste d'option d'une CLI et en utilisant la méthode addAction de la classe Option.
+
+6 -
+    6.1 -> Voir fichier cli.dtd
+    6.2 -> Voir DTD.java
+    6.3
 
 

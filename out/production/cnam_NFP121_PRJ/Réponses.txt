@@ -49,5 +49,7 @@
     4.3
 
 5 -
+    5.1 -> Voir fichier CLIUtils
+    5.2 -> Il existe sur la classe CLIModulaire une méthode qui permet d'associer une action à une option, il suffit de trouver l'option voulue.
 
 
