@@ -1,11 +1,12 @@
-public class ModifyModeSetPleineAction implements Action {
-    @Override
-    public void execute(Configuration config, String string) {
-
+public class ModifyModeSetPleineAction extends ABActionConfiguration {
+    ModifyModeSetPleineAction(Configuration configuration){
+        this.configuration = configuration;
     }
-
+    protected void modifyConfiguration(Object object){
+        this.configuration.mode = Mode.CREUSE;
+    }
     @Override
-    public void execute(Configuration config) {
-        config.mode = Mode.PLEINE;
+    public void execute(Object object) {
+        this.modifyConfiguration(object);
     }
 }

@@ -10,11 +10,11 @@ public class CLIUtils {
                 String flag = getFlag(field);
                 String flagAtFalse = "-"+Character.toUpperCase(flag.charAt(1));
 
-                cli.addOption(flag,"Positionner "+field.getName()+" à vrai.", null);
-                cli.addOption(flagAtFalse,"Positionner "+field.getName()+" à faux.", null);
+                cli.addOption(flag,"Positionner "+field.getName()+" à vrai.", false,null);
+                cli.addOption(flagAtFalse,"Positionner "+field.getName()+" à faux.", false, null);
 
             }else{
-                cli.addOption(getFlag(field),"Value of "+field.getName(), null);
+                cli.addOption(getFlag(field),"Value of "+field.getName(), true, null);
             }
         }
         return cli;

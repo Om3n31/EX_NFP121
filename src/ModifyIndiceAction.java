@@ -1,15 +1,17 @@
-public class ModifyIndiceAction implements Action {
-    @Override
-    public void execute(Configuration config, String string) {
+public class ModifyIndiceAction extends ABActionConfiguration {
+
+    ModifyIndiceAction(Configuration configuration){
+        this.configuration = configuration;
+    }
+    protected void modifyConfiguration(Object object){
         try{
-            config.indice = Integer.parseInt(string);
+            configuration.indice = Integer.parseInt((String) object);
         }catch (NumberFormatException e){
-            System.out.println("Argument "+string+" is not an integer");
+            System.out.println("Argument "+object+" is not an integer");
         }
     }
-
     @Override
-    public void execute(Configuration config) {
-
+    public void execute(Object object) {
+        this.modifyConfiguration(object);
     }
 }

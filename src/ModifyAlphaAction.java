@@ -1,15 +1,17 @@
-public class ModifyAlphaAction implements Action {
-    @Override
-    public void execute(Configuration config, String arg) {
+public class ModifyAlphaAction extends ABActionConfiguration {
+
+    ModifyAlphaAction(Configuration configuration){
+        this.configuration = configuration;
+    }
+     protected void modifyConfiguration(Object object){
         try{
-            config.alpha = Double.parseDouble(arg);
+            configuration.alpha = Double.parseDouble((String) object);
         }catch (NumberFormatException e){
-            System.out.println("Argument "+arg+" is not a double");
+            System.out.println("Argument "+object+" is not a double");
         }
     }
-
     @Override
-    public void execute(Configuration config) {
-
+    public void execute(Object object) {
+       this.modifyConfiguration(object);
     }
 }

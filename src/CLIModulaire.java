@@ -31,16 +31,17 @@ public class CLIModulaire {
                 return null;
             }
             if(!currentOption.takesValue()){
-                currentOption.executer(config);
+                System.out.println(currentOption.takesValue());
+                currentOption.executer(null);
             }
             else if(currentOption.takesValue()){
-                currentOption.executer(config, args[i]);
+                currentOption.executer(args[i]);
             }
         }
         return new Configuration();
     }
-    public void addOption(String accès, String description, Action action){
-        Option option = new Option(accès, description, action);
+    public void addOption(String accès, String description, Boolean takesValue, IAction action){
+        Option option = new Option(accès, description, takesValue, action);
         options.put(accès, option);
     }
 

@@ -1,16 +1,17 @@
-public class ModifyEpsilonAction implements Action {
+public class ModifyEpsilonAction extends ABActionConfiguration {
 
-    @Override
-    public void execute(Configuration config, String string) {
+    ModifyEpsilonAction(Configuration configuration){
+        this.configuration = configuration;
+    }
+    protected void modifyConfiguration(Object object){
         try{
-            config.epsilon = Double.parseDouble(string);
+            configuration.epsilon = Double.parseDouble((String) object);
         }catch (NumberFormatException e){
-            System.out.println("Argument "+string+" is not a double");
+            System.out.println("Argument "+object+" is not a double");
         }
     }
-
     @Override
-    public void execute(Configuration config) {
-
+    public void execute(Object object) {
+        this.modifyConfiguration(object);
     }
 }

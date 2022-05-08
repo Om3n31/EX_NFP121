@@ -1,11 +1,11 @@
-public class Option implements OptionInterface {
+public class Option {
     private String accès;
     private String description;
-    private Action action;
+    private IAction action;
 
     private Boolean takesValues;
-    Option(String accès, String description, Action action){
-        this.takesValues = false;
+    Option(String accès, String description,Boolean takesValue, IAction action){
+        this.takesValues = takesValue;
         setAccès(accès);
         setDescription(description);
         this.action = action;
@@ -27,21 +27,11 @@ public class Option implements OptionInterface {
         return takesValues;
     }
 
-    public void setAction(Action action){
+    public void setAction(IAction action){
         this.action = action;
     }
 
-    @Override
-    public void executer() {
-    }
-
-    @Override
-    public void executer(Configuration config) {
-        action.execute(config);
-    }
-
-    @Override
-    public void executer(Configuration config, String str) {
-        action.execute(config, str);
+    public void executer(Object object) {
+        this.action.execute(object);
     }
 }

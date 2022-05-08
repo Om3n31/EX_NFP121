@@ -2,7 +2,7 @@
     1.1 @Override est un décorateur que l'on écrit au dessus d'une méthode
         qui redéfinit une méthode existante dans une classe parente.
         Ici, elle apparaît car .toString() est une méthode de la classe Objet,
-        on peux utiliser le décorateur @Override car nous réutilisons la même signature
+        on peut utiliser le décorateur @Override car nous réutilisons la même signature
         pour la méthode toString(), il s'agit d'une redéfinition.
         Cependant l'utilisation du décorateur n'est pas obligatoire, il existe pour faciliter la lecture
         du code et pour que le compilateur vérifie si la méthode avec le décorateur est bien en train de redéfinir
@@ -34,10 +34,10 @@
     2.6
 
 3 -
-    3.1
-    3.2
-    3.3 On utilise une HashMap, qui contient l'accès de l'optionAbstract et l'objet de l'optionAbstract lui même, HashMap permet d'associer
-        une clé à une valeur, parfait pour notre cas d'utilisation.
+    3.1 -> Voir fichier NG_Diagramme_de_classe.pdf
+    3.2 -> Voir fichier PageRank et CLIModulaire
+    3.3 On utilise une HashMap peuplée à l'ajout d'une option, qui contient l'accès de l'option et l'objet de l'option lui même, HashMap permet d'associer
+        une clé à une valeur, ce qui dans notre contexte rend le code plus lisible.
 
 4 -
     4.1 On crée une JFrame qui va contenir plusieurs JPanel, un premier JPanel avec un layout en BorderLayout,
@@ -50,11 +50,12 @@
 
 5 -
     5.1 -> Voir fichier CLIUtils
-    5.2 On peux ajouter une action à une option en consultant la liste d'option d'une CLI et en utilisant la méthode addAction de la classe Option.
+    5.2 On peut ajouter une action à une option en consultant la liste d'option d'une CLI et en utilisant la méthode addAction de la classe Option.
 
 6 -
     6.1 -> Voir fichier cli.dtd
     6.2 -> Voir DTD.java
-    6.3
+    6.3 On pourrait utiliser la syntaxe XML pour définir l'accès, la définition, le booléen "takesValue" et le sous-type d'IAction associée à un élément "Option".
+        Il faudrait en suite parser ce XML et créer un nouvel objet Option pour chaque élément "Option" dans le document.
 
 
